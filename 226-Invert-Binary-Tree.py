@@ -18,9 +18,7 @@ class Solution:
         self.helperInvert(current.right)
         self.helperInvert(current.left)
 
-        temp = current.left
-        current.left = current.right
-        current.right = temp
+        current.left, current.right = current.right, current.left
 
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         self.helperInvert(root)
